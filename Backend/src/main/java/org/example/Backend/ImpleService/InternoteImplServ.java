@@ -42,5 +42,24 @@ public class InternoteImplServ implements InternoteService{
 		// TODO Auto-generated method stub
 		return internoteRepo.findAll();
 	}
+	
+	public boolean getInternoteByEmailAddress(String emailAddress) {
+		return internoteRepo.existByEmailAddress(emailAddress);
+	}
 
+	public boolean getInternoteByUserName(String username) {
+		return internoteRepo.existByUserName(username);
+	}
+	
+	public boolean getInternoteByPassword(String password) {
+		return internoteRepo.existByPassword(password);
+	}
+	
+	public Internote getInternoteByEmailAndPassword(String emailAddress,String password) {
+		return internoteRepo.existByEmailAddressAndPassword(emailAddress, password);
+		
+		
+	}
+	
+	
 }
